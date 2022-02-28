@@ -1,0 +1,23 @@
+/* .hidden {
+  display: none;
+} */
+* {
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  flex: column;
+}
+article img {
+  max-width: 30%;
+}
+
+.koala-img-r {
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+
+.koala-img-l {
+  float: left;
+  margin: 10px 10px 10px 0;
+}
