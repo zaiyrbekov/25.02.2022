@@ -118,54 +118,125 @@
 
 // // document.location.assign("")
 
-let fruist = ["apple", "banana",
-    false, 13,
-    "hello"["1", "2", "3"],
-    { name: "Peter", lastName: "Parcker" },
-    12345]
-fruist.forEach(e => console.log(typeof e));
+// let fruits = ['apple', 'banana', 'qiwi', 'peach'];
+// fruits.forEach(element => {
+//   console.log(element);
+// });
+
+// let fruits = ['apple',
+//   'banana',
+//   false,
+//   13,
+//   'hello',
+//   ['1', '2', '3'],
+//   { name: 'JK', lastname: 'Jeon'},
+//   12345];
+// fruits.forEach((item) => {
+//   console.log(typeof item);
+// });
+
+// let biases = [
+//   {
+//     name: 'Taehyung',
+//     lastName: 'Kim',
+//     age: 26
+//   },
+//   {
+//     name: 'Lucas',
+//     lastName: 'Wong',
+//     age: 24
+//   },
+//   {
+//     name: 'Jisung',
+//     lastName: 'Han',
+//     age: 22
+//   },
+//   {
+//     name: 'Hoseok',
+//     lastName: 'Jung',
+//     age: 28
+//   }
+// ];
+// let container = document.querySelector('#container');
+// container.style.border = '1px solid black';
+// container.style.padding = '5px';
+// biases.forEach((item) => {
+//   let person = document.createElement('div');
+//   person.style.padding = '3px';
+//   let name = `${item.name}, `;
+//   let lastName  = `${item.lastName}, `;
+//   let age  = item.age;
+//   person.append(name);
+//   person.append(lastName);
+//   person.append(age);
+//   container.append(person);
+// }
+// )
 
 
-let people = [
-  {
-    name: "Parker",
-    lastname: "Peter",
-    age: 34
-  },
-  {
-    name: "Laslay",
-    lastname: "Jhonson",
-    age: 55
-  },
-  {
-    name: "Sadyr",
-    lastname: "Japarov",
-    age: 44
-  },
-  {
-    name: "Elon",
-    lastname: "Mask",
-    age: 51
-  },
-  {
-    name: "Sam",
-    lastname: "Crus",
-    age: 11
-  }
-
-  
-
+let base = [{
+  name: "Ivan",
+  age: "Age 22",
+  img: "https://st2.depositphotos.com/4431055/7495/i/600/depositphotos_74950191-stock-photo-men-latin-american-and-hispanic.jpg",
+  profession: "Profession: It-specialist",
+  resume: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt est, alias laboriosam voluptatem neque fugit quasi quos sit obcaecati magnam! Dolor dolorem consequuntur quas cupiditate eos voluptates quae nemo esse!"
+},
+{
+  name: "Clara",
+  age: "Age 19",
+  img: "https://bigpicture.ru/wp-content/uploads/2018/12/100faces00.jpg",
+  profession: "Profession: front-end specialist",
+  resume: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt est, alias laboriosam voluptatem neque fugit quasi quos sit obcaecati magnam! Dolor dolorem consequuntur quas cupiditate eos voluptates quae nemo esse!"
+},
+{
+  name: "Idai",
+  age: "Age 19",
+  img: "https://www.komarov.design/content/images/2020/11/image-4.jpeg ",
+  profession: "Profession: It-specialist",
+  resume: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt est, alias laboriosam voluptatem neque fugit quasi quos sit obcaecati magnam! Dolor dolorem consequuntur quas cupiditate eos voluptates quae nemo esse!"
+}
 ]
+let container = document.querySelector("#container")
+container.style.display = "flex";
 
-let container = document.querySelector("#container");
-people.forEach((item)=>{
-  let person = document.createElement("div");
-  let name = name.item;
-  let lastname = lastname.item;
-  let age = age.item;
 
-  person.append(name);
-  person.append(lastname);
-  person.append(age);
-  container.append(person);
-});
+
+base.forEach((item) => {
+let div = document.createElement("div")
+div.style.width = "250px";
+div.style.border = "2px solid gray"
+div.style.borderRadius = `20px`;
+div.style.margin = "10px";
+
+let article = document.createElement("article")
+article.style.margin = "10px"
+let imgs = document.createElement("img")
+imgs.style.minWidth = '168px'
+imgs.style.height = '168px'
+imgs.style.borderRadius = '50%'
+imgs.style.display = "block"
+imgs.style.margin = "0 30px"
+let person = document.createElement("h2");
+person.style.textAlign = "center"
+let ages = document.createElement("span")
+let pro = document.createElement("h4")
+let para = document.createElement("p")
+
+
+imgs.setAttribute('src', item.img)
+let name = item.name;
+let age = item.age;
+let profession = `${item.profession }, `;
+let resume = `${item.resume}, `;
+
+
+person.append(name);
+imgs.append();
+ages.append(age);
+pro.append(profession);
+para.append(resume);
+article.append(imgs, person, ages, pro, para);
+div.append(article);
+container.append(div);
+
+})
